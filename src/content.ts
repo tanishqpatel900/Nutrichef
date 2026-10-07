@@ -4,8 +4,11 @@
 
 export type Img = { src: string; alt: string; w: number; h: number };
 
+// Vite base path ("/" locally, "/Nutrichef/" on GitHub Pages). Undefined when vite.config imports this file.
+const BASE: string = (import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL ?? "/";
+
 const img = (name: string, alt: string, w: number, h: number): Img => ({
-  src: `/img/${name}.svg`,
+  src: `${BASE}img/${name}.svg`,
   alt,
   w,
   h,
@@ -20,7 +23,7 @@ export const brand = {
   metaTitle: "YourBrand · White-label AI nutrition for gyms",
   description:
     "Give every member a personal AI nutrition coach under your own brand. Personalized plans, recipes and tracking that keep members engaged and add a new revenue line.",
-  ogImage: "/img/cta-bg.svg", // swap for a 1200x630 PNG/JPG before launch
+  ogImage: "img/cta-bg.svg", // swap for a 1200x630 PNG/JPG before launch
   logo: img("logo", "YourBrand", 104, 56),
   nav: [
     { label: "Features", href: "#features" },
