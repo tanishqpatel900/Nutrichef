@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a2f24"/><stop offset="1" stop-color="#0c0d0b"/></linearGradient><radialGradient id="l" cx=".7" cy=".2" r=".7"><stop offset="0" stop-color="rgba(255,255,255,.18)"/><stop offset="1" stop-color="rgba(255,255,255,0)"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#g)"/><rect width="1200" height="800" fill="url(#l)"/>
+  <rect x="0" y="560" width="1200" height="240" fill="rgba(0,0,0,.35)"/>
+  <ellipse cx="760" cy="600" rx="190" ry="46" fill="rgba(255,255,255,.12)"/>
+  <circle cx="700" cy="585" r="34" fill="rgba(211,255,98,.25)"/><circle cx="790" cy="590" r="28" fill="rgba(253,82,37,.25)"/>
+  <circle cx="420" cy="320" r="99.00000000000001" fill="rgba(255,255,255,.08)"/>
+  <path d="M162.59999999999997 800 C162.59999999999997 478.40000000000003 301.2 443.75 420 443.75 S677.4000000000001 478.40000000000003 677.4000000000001 800 Z" fill="rgba(255,255,255,.08)"/><text x="600" y="778" font-family="Arial, Helvetica, sans-serif" font-size="43" fill="rgba(255,255,255,.28)" text-anchor="middle" letter-spacing="2">FEATURE 2 PHOTO</text></svg>
