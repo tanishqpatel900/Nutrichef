@@ -56,9 +56,9 @@
 
 @media (max-width: 767px) {
   .app-row {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "stage stage" "theme palette";
-    gap: 2.5rem 1rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: "stage" "theme" "palette";
+    gap: 2rem;
     width: 100%;
   }
   .app-stage { grid-area: stage; justify-self: center; width: 100%; height: 30rem; }

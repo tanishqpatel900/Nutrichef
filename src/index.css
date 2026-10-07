@@ -268,7 +268,7 @@
 
 .word { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: 0.08em; margin-bottom: -0.08em; }
 .word-inner { display: inline-block; will-change: transform; }
-.js .hero-title .word-inner { transform: translateY(110%); }
+.js .hero-title-layer { visibility: hidden; }
 
 @keyframes bob {
   0%, 100% { transform: translateY(0); }

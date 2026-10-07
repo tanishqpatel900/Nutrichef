@@ -6,7 +6,7 @@
 @media (max-width: 767px) { .steps-hero { height: 22rem; } }
 
 @media (min-width: 992px) {
-  .steps-pin { height: calc(100svh - var(--nav-h)); min-height: 36rem; }
+  .steps-pin { height: calc(100svh - var(--nav-h)); min-height: 36rem; overflow-x: visible; overflow-y: clip; }
 }
 .steps-track-col { position: relative; }
 /* 118rem ring: mostly off-screen to the left, the active screenshot sits at its east edge. */
@@ -51,7 +51,8 @@
   max-width: 31rem;
 }
 @media (min-width: 992px) {
-  .step { gap: 1rem; opacity: 0.4; transition: opacity 0.3s var(--ease); }
+  /* Spec dims inactive steps to 40%; 0.65 keeps body copy above WCAG AA (4.5:1). */
+  .step { gap: 1rem; opacity: 0.65; transition: opacity 0.3s var(--ease); }
   .step.is-active { opacity: 1; }
 }
 .step-num {

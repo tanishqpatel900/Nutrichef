@@ -19,6 +19,7 @@ export function Steps() {
             start: () => `top ${navHeight()}`,
             end: "+=200%",
             pin: true,
+            pinSpacing: true, // parent is flex, where GSAP defaults this to false
             scrub: 0.6,
             anticipatePin: 1,
             onUpdate: (st) => setActive(st.progress < 0.3 ? 0 : st.progress < 0.7 ? 1 : 2),

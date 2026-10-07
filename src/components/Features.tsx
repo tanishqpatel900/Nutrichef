@@ -5,7 +5,7 @@ function CardText({ title, body, narrow }: { title: string; body: string; narrow
   return (
     <div className="flex flex-col gap-4 p-8 max-md:p-6">
       <Eyebrow>{features.eyebrow}</Eyebrow>
-      <h3 className="heading-h3">{title}</h3>
+      <h2 className="heading-h3">{title}</h2>
       <p className={`text-body ${narrow ? "max-width-medium" : ""}`}>{body}</p>
     </div>
   );
@@ -81,14 +81,14 @@ export function Features() {
 
           <article className="card flex flex-col lg:col-start-2 lg:row-span-2 lg:row-start-1" data-appear>
             <CardText title={app.title} body={app.body} />
-            <div className="relative min-h-[26rem] flex-1">
+            <div className="relative min-h-[26rem] flex-1 max-lg:min-h-0">
               <img
                 src={app.image.src}
                 width={app.image.w}
                 height={app.image.h}
                 alt={app.image.alt}
                 loading="lazy"
-                className="absolute bottom-0 left-1/2 h-[112%] w-auto max-w-none -translate-x-1/2 object-contain object-top max-lg:relative max-lg:h-auto max-lg:w-full max-lg:translate-x-[-50%]"
+                className="absolute top-4 left-1/2 h-[115%] w-auto max-w-none -translate-x-1/2 max-lg:static max-lg:h-auto max-lg:w-full max-lg:translate-x-0"
               />
             </div>
           </article>

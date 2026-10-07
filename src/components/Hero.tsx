@@ -38,11 +38,14 @@ export function Hero() {
 
       // Headline: setup line reveals, then is replaced word-by-word by the payoff.
       mm.add(MOTION_OK, () => {
+        // Park every word below its mask before un-hiding the layers.
+        gsap.set(".hero-title .word-inner", { yPercent: 110 });
+        gsap.set(".hero-title-layer", { visibility: "visible" });
         gsap
           .timeline({ delay: 0.25 })
-          .fromTo(".hw-setup .word-inner", { yPercent: 110 }, { yPercent: 0, duration: 0.6, stagger: 0.08, ease: "brand" })
+          .to(".hw-setup .word-inner", { yPercent: 0, duration: 0.6, stagger: 0.08, ease: "brand" })
           .to(".hw-setup .word-inner", { yPercent: -110, duration: 0.6, stagger: 0.08, ease: "power2.in" }, "+=1.4")
-          .fromTo(".hw-payoff .word-inner", { yPercent: 110 }, { yPercent: 0, duration: 0.6, stagger: 0.08, ease: "brand" }, "-=0.35");
+          .to(".hw-payoff .word-inner", { yPercent: 0, duration: 0.6, stagger: 0.08, ease: "brand" }, "-=0.35");
 
         // Scroll-pinned ring sequence.
         const stage = root.current!.querySelector<HTMLElement>(".hero-stage")!;
@@ -71,12 +74,12 @@ export function Hero() {
 
       // Reduced motion: no pin/rotation, opacity-only headline swap.
       mm.add(REDUCED, () => {
-        gsap.set(".hero-title .word-inner", { yPercent: 0 });
+        gsap.set(".hero-title-layer", { visibility: "visible", opacity: 0 });
         gsap
           .timeline({ delay: 0.25 })
-          .fromTo(".hw-setup", { opacity: 0 }, { opacity: 1, duration: 0.6 })
+          .to(".hw-setup", { opacity: 1, duration: 0.6 })
           .to(".hw-setup", { opacity: 0, duration: 0.6 }, "+=1.4")
-          .fromTo(".hw-payoff", { opacity: 0 }, { opacity: 1, duration: 0.6 });
+          .to(".hw-payoff", { opacity: 1, duration: 0.6 });
       });
     }, root);
     return () => ctx.revert();
@@ -95,7 +98,7 @@ export function Hero() {
               <Words text={hero.payoff} className="hw-payoff" />
             </h1>
             <p className="text-lead">{hero.lead}</p>
-            <Button size="lg" href={brand.ctaHref}>
+            <Button size="lg" icon={false} href={brand.ctaHref}>
               {brand.ctaLabel}
             </Button>
           </div>

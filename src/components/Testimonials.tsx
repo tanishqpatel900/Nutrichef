@@ -37,7 +37,7 @@ export function Testimonials() {
           <h2 className="heading-h3">{testimonials.title}</h2>
           <p className="text-body">{testimonials.subtitle}</p>
         </div>
-        <ul className="grid w-full max-w-[80rem] justify-center gap-4 lg:grid-cols-[repeat(3,minmax(0,26rem))]">
+        <ul className="grid w-full grid-cols-[minmax(0,32rem)] justify-center gap-4 lg:grid-cols-[repeat(3,minmax(0,26rem))]">
           {testimonials.items.map((t) => (
             <FlipCard key={t.name} item={t} />
           ))}

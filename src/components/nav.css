@@ -1,12 +1,18 @@
-.site-nav {
-  transition: background-color 0.3s var(--ease), backdrop-filter 0.3s var(--ease);
-}
-/* Transparent over the black hero; gains a translucent backdrop once content scrolls under it. */
-.site-nav.is-scrolled {
+/* Transparent over the black hero; gains a translucent backdrop once content scrolls under it.
+   The blur lives on a pseudo-element: backdrop-filter on the header itself would become the
+   containing block for the fixed mobile menu and trap it inside the 4.5rem bar. */
+.site-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   background-color: rgba(1, 1, 1, 0.82);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+  pointer-events: none;
 }
+.site-nav.is-scrolled::before { opacity: 1; }
 
 .nav-link {
   font-size: 0.875rem;

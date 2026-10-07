@@ -6,7 +6,7 @@
   inset: 0;
   z-index: 100;
   display: grid;
-  place-items: center;
+  justify-items: center;
   padding: 1.5rem;
   overflow-y: auto;
   background: rgba(1, 1, 1, 0.8);
@@ -16,6 +16,7 @@
   position: relative;
   width: 100%;
   max-width: 36rem;
+  margin-block: auto;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;

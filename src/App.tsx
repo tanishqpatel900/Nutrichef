@@ -18,11 +18,11 @@ function useAppearUp() {
   useLayoutEffect(() => {
     const mm = gsap.matchMedia();
     const batch = (selector: string, y: number) => {
-      gsap.set(selector, { autoAlpha: 0, y });
+      gsap.set(selector, { opacity: 0, y }); // opacity only: content stays in the accessibility tree
       ScrollTrigger.batch(selector, {
         start: "top 85%",
         once: true,
-        onEnter: (els) => gsap.to(els, { autoAlpha: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "brand", overwrite: true }),
+        onEnter: (els) => gsap.to(els, { opacity: 1, y: 0, duration: 0.6, stagger: 0.1, ease: "brand", overwrite: true }),
       });
     };
     mm.add(MOTION_OK, () => batch("[data-appear]", rem(2)));
@@ -46,7 +46,7 @@ export default function App() {
         Skip to content
       </a>
       <Nav />
-      <main id="main">
+      <main id="main" className="overflow-x-clip">
         <Hero />
         <Features />
         <Steps />
@@ -55,7 +55,7 @@ export default function App() {
         <About />
         <Testimonials />
       </main>
-      <div className="px-6">
+      <div className="overflow-x-clip px-6">
         <Cta />
         <Footer />
       </div>
