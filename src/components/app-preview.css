@@ -1,0 +1,70 @@
+.app-row {
+  display: grid;
+  grid-template-columns: 7rem 25rem 7rem;
+  gap: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+.app-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  height: 35rem;
+  text-align: center;
+}
+.app-menu-label { line-height: 1.4; }
+.app-options { display: flex; flex-direction: column; align-items: center; gap: 1.25rem; }
+.app-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+.app-option:focus-visible { outline-offset: 4px; }
+.app-option-label { font-size: 0.75rem; font-weight: 500; color: var(--text); }
+.app-option[aria-selected="true"] .app-option-label { color: var(--accent); }
+.app-option[aria-selected="true"] .swatch { box-shadow: inset 0 0 0 2px var(--accent); }
+.app-option:hover:not([aria-selected="true"]) .swatch { box-shadow: inset 0 0 0 2px var(--border-strong); }
+
+.app-stage { position: relative; width: 25rem; height: 35rem; display: grid; place-items: center; }
+.app-glow { position: absolute; inset: -6rem; background: var(--grad-glow); pointer-events: none; }
+.app-phone {
+  position: relative;
+  height: 35rem;
+  aspect-ratio: 9 / 19;
+  border-radius: 2.25rem;
+  overflow: hidden;
+  border: 0.375rem solid #0a0a0a;
+  outline: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  background: var(--bg);
+}
+.app-shot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+}
+.app-shot.is-on { opacity: 1; }
+
+@media (max-width: 767px) {
+  .app-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "stage stage" "theme palette";
+    gap: 2.5rem 1rem;
+    width: 100%;
+  }
+  .app-stage { grid-area: stage; justify-self: center; width: 100%; height: 30rem; }
+  .app-phone { height: 30rem; }
+  .app-menu { height: auto; }
+  .app-menu:first-child { grid-area: theme; }
+  .app-menu:last-child { grid-area: palette; }
+  .app-options { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+}

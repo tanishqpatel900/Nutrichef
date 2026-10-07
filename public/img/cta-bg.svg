@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1200" viewBox="0 0 2400 1200"><defs><radialGradient id="g" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#2d3a1d"/><stop offset=".6" stop-color="#11150c"/><stop offset="1" stop-color="#010101"/></radialGradient></defs>
+  <rect width="2400" height="1200" fill="url(#g)"/>
+  <circle cx="820" cy="480" r="100.80000000000001" fill="rgba(0,0,0,.35)"/>
+  <path d="M557.92 1200 C557.92 641.28 699.04 606 820 606 S1082.08 641.28 1082.08 1200 Z" fill="rgba(0,0,0,.35)"/><circle cx="1600" cy="480" r="90" fill="rgba(0,0,0,.3)"/>
+  <path d="M1366 1200 C1366 624 1492 592.5 1600 592.5 S1834 624 1834 1200 Z" fill="rgba(0,0,0,.3)"/><text x="1200" y="1178" font-family="Arial, Helvetica, sans-serif" font-size="86" fill="rgba(255,255,255,.28)" text-anchor="middle" letter-spacing="2">CTA BACKGROUND</text></svg>

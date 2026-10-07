@@ -1,0 +1,66 @@
+.site-nav {
+  transition: background-color 0.3s var(--ease), backdrop-filter 0.3s var(--ease);
+}
+/* Transparent over the black hero; gains a translucent backdrop once content scrolls under it. */
+.site-nav.is-scrolled {
+  background-color: rgba(1, 1, 1, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-link {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.2s var(--ease);
+}
+.nav-link:hover { color: var(--white); }
+
+.hamburger {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.75rem;
+  cursor: pointer;
+}
+.hamburger span {
+  position: absolute;
+  left: 50%;
+  width: 1.5rem;
+  height: 1.5px;
+  margin-left: -0.75rem;
+  background: var(--accent);
+  transition: transform 0.3s var(--ease), opacity 0.2s var(--ease);
+}
+.hamburger span:nth-child(1) { transform: translateY(-0.4375rem); }
+.hamburger span:nth-child(3) { transform: translateY(0.4375rem); background: var(--white); }
+.hamburger.is-open span:nth-child(1) { transform: rotate(45deg); }
+.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(3) { transform: rotate(-45deg); background: var(--accent); }
+
+.mobile-menu {
+  position: fixed;
+  inset: var(--nav-h) 0 0 0;
+  background: var(--bg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.75rem);
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0s linear 0.3s;
+  overflow-y: auto;
+}
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition: opacity 0.3s var(--ease), transform 0.3s var(--ease), visibility 0s;
+}
+.mobile-link {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text);
+  transition: color 0.2s var(--ease);
+}
+.mobile-link:hover { color: var(--white); }

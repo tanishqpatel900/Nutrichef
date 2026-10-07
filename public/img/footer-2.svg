@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="440" viewBox="0 0 400 440"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1f2a2c"/><stop offset="1" stop-color="#0b0d0e"/></linearGradient></defs><rect width="400" height="440" fill="url(#g)"/>
+  <circle cx="200" cy="176" r="60" fill="rgba(255,255,255,.07)"/>
+  <path d="M44 440 C44 272 128 251 200 251 S356 272 356 440 Z" fill="rgba(255,255,255,.07)"/><text x="200" y="418" font-family="Arial, Helvetica, sans-serif" font-size="14" fill="rgba(255,255,255,.28)" text-anchor="middle" letter-spacing="2">FOOTER 2</text></svg>

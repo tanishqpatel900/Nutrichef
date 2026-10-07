@@ -1,0 +1,79 @@
+.steps { --TR: 59rem; position: relative; overflow-x: clip; padding-bottom: 8rem; }
+@media (max-width: 991px) { .steps { padding-bottom: 4rem; } }
+
+.steps-hero { position: relative; height: 40rem; overflow: hidden; }
+.steps-hero img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); }
+@media (max-width: 767px) { .steps-hero { height: 22rem; } }
+
+@media (min-width: 992px) {
+  .steps-pin { height: calc(100svh - var(--nav-h)); min-height: 36rem; }
+}
+.steps-track-col { position: relative; }
+/* 118rem ring: mostly off-screen to the left, the active screenshot sits at its east edge. */
+.steps-track {
+  position: absolute;
+  top: 50%;
+  right: 4rem;
+  width: calc(var(--TR) * 2);
+  height: calc(var(--TR) * 2);
+  margin-top: calc(var(--TR) * -1);
+  border-radius: 9999px;
+  will-change: transform;
+}
+.steps-track-line {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--border-accent);
+}
+.steps-track-line.is-inner { inset: 18rem; border-color: var(--border); }
+.steps-shot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14rem;
+  aspect-ratio: 9 / 19;
+  transform: translate(-50%, -50%) rotate(var(--a)) translateX(calc(var(--TR) - 8rem));
+  border-radius: 1.75rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  opacity: 0.4;
+  transition: opacity 0.3s var(--ease);
+}
+.steps-shot.is-active { opacity: 1; }
+.steps-shot img { width: 100%; height: 100%; object-fit: cover; }
+
+.steps-list { display: flex; flex-direction: column; justify-content: center; gap: 4rem; }
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 31rem;
+}
+@media (min-width: 992px) {
+  .step { gap: 1rem; opacity: 0.4; transition: opacity 0.3s var(--ease); }
+  .step.is-active { opacity: 1; }
+}
+.step-num {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background: var(--surface-raised);
+  color: var(--accent);
+  font-weight: 500;
+}
+.step-mobile-img {
+  width: 12rem;
+  height: auto;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-card);
+}
+@media (max-width: 991px) {
+  .steps-list { gap: 3rem; }
+  .step { gap: 1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .step, .steps-shot { opacity: 1; }
+}
